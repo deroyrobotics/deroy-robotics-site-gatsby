@@ -1,7 +1,7 @@
 ---
-template: contact-page
-slug: /contact
-title: Get in touch
+template: register-page
+slug: /register
+title: Registration
 ---
 If you are looking to register for DeRoy Robotics, please visit our [registration page](/register).
 
