@@ -1,11 +1,11 @@
 ---
 template: index-page
 slug: /
-title: Wyatt Morriss
-tagline: Graphic Designer
-featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
+title: Welcome to DeRoy Robtics Club
+tagline: We are Getting READY for 2020 Robotics Expo
+featuredImage: /assets/deroy-robotics-profile.png
 cta:
   ctaText: Know more
   ctaLink: /about
 ---
-He is a award winning gaming graphic designer, based in sunny side of California. Working as Principal designer at Bethesda
+Our new location is : Hindu Temple Community Center(2445 S 130th Cir, Omaha, NE 68144). More to come!!!
