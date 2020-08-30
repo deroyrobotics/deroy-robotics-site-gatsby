@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Foundation",
+    "title": "DeRoy Robotics Club",
     "titleTemplate": "%s",
-    "description": "A starter to launch your blazing fast personal website and a blog, Built with Gatsby and Netlify CMS. Made with ❤ by Stackrole",
-    "siteUrl": "https://foundation.stackrole.com",
-    "image": "/assets/stackrole.png",
-    "twitterUsername": "@stackrole"
+    "description": "DeRoy Robotics",
+    "siteUrl": "https://www.deroyroboticsclub.com",
+    "image": "/assets/deroy-robotics-profile.png",
+    "twitterUsername": "@deroyrobotics"
   },
   "ga": "UA-XXXXXXXXX-X"
 }
