@@ -18,6 +18,9 @@ const MenuItems = [
   {
     path: "/contact",
     title: "Contact"
+  }, {
+    path: "/register",
+    title: "Register"
   },
 ]
 
