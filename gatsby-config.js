@@ -67,6 +67,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    // 'gatsby-plugin-postcss',
+    { 
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)
+        ]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     {
