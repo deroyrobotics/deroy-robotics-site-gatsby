@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
-import {RiSendPlane2Line} from "react-icons/ri";
-import Field from '../components/Field'
+// import {RiSendPlane2Line} from "react-icons/ri";
+import Field from '../components/Forms/Field'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -55,11 +55,20 @@ const Register = ({data}) => {
         description={frontmatter.title + " " + site.siteMetadata.title}
       />
       <div className="wrapper">
-        <h1>{frontmatter.title}</h1>
-        <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="w-full max-w-2xl mx-auto">
+          <h1 className="text-3xl mb-6 mt-6">{frontmatter.title}</h1>
+          <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
 
+        <div className="rounded border p-4 text-xs">
+          <pre>
+            <code>
+            {JSON.stringify(registerDetails, null, 2)}
+            </code>
+          </pre>
+        </div>
         <form 
-          className="register-form w-full max-w-2xl mx-auto" 
+          className=" border-t pt-6 pb-8 register-form w-full max-w-2xl mx-auto mt-8" 
           action="/thanks" name="register" method="POST" 
           data-netlify="true" data-netlify-honeypot="bot-field"
         >
@@ -89,32 +98,22 @@ const Register = ({data}) => {
             <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
               <Field 
                 required
-                label="Male"
+                label="Student Gender"
                 id="student_male"
                 type="radio"
                 name="gender"
+                options={[
+                  {label: 'Male', value: 'male'},
+                  {label: 'Female', value: 'female'},
+                ]}
                 value={registerDetails.studentGender}
+                desription="Why do we ask? The diversity of the students in the program affects what grants
+                we are elegiable to apply for."
                 onChange={(e) => {
                   setRegisterDetails({...registerDetails, studentGender: e.target.value});
                 }}
               />
-
-              <Field  
-                required
-                label="Female"
-                id="student_female"
-                type="radio"
-                name="gender"
-                value={registerDetails.studentGender}
-                onChange={(e) => {
-                  setRegisterDetails({...registerDetails, studentGender: e.target.value});
-                }}
-              />
-
-              <p className="description">
-                <em>Why do we ask?</em> The diversity of the students in the program affects what grants
-                we are elegiable to apply for.
-              </p>
+            
             </div>
           </div>
           
@@ -159,42 +158,21 @@ const Register = ({data}) => {
             <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
               <Field
                 required
-                label="Engineering"
+                label="Participating In"
                 id="track_engineering_input"
                 type="radio"
-                name="track"
-                // autoComplete="name"
+                name="participateing"
+                options={[
+                  { label: 'Engineering', value: 'Engineering' }, 
+                  { label: 'Programming', value: 'Programming' }, 
+                  { label: 'Both', value: 'Both' }
+                ]}
                 value={registerDetails.track}
                 onChange={(e) => {
                   setRegisterDetails({ ...registerDetails, track: e.target.value });
                 }}
               />
 
-              <Field
-                required
-                label="Programming"
-                id="track_programing_input"
-                type="radio"
-                name="track"
-                // autoComplete="name"
-                value={registerDetails.track}
-                onChange={(e) => {
-                  setRegisterDetails({ ...registerDetails, track: e.target.value });
-                }}
-              />
-
-              <Field
-                required
-                label="Both"
-                id="track_both_input"
-                type="radio"
-                name="track"
-                // autoComplete="name"
-                value={registerDetails.track}
-                onChange={(e) => {
-                  setRegisterDetails({ ...registerDetails, track: e.target.value });
-                }}
-              />
             </div>
           </div>
           
@@ -286,39 +264,29 @@ const Register = ({data}) => {
               <div>
                 Are you interested in helping?
                 <span className="description">
-                  Let us know if you might be interested in helping throughout the year or at the Expo
+                  Let us know if you might be interested in helping throughout the year or at the Expo?
                 </span>
               </div>
 
-
-
               <Field
                 required
-                label="Yes"
+                // label="Yes"
                 type="radio"
                 name="parent_interested"
                 value={registerDetails.parentInterest}
-                onChange={(e) => {
-                  setRegisterDetails({ ...registerDetails, parentInterest: e.target.value });
-                }}
-              />
-
-              <Field
-                required
-                label="No"
-                type="radio"
-                name="parent_interested"
-                value={registerDetails.parentInterest}
+                options={[
+                  { label: 'Yes', value: 'Yes' },
+                  { label: 'No', value: 'No' },
+                ]}
                 onChange={(e) => {
                   setRegisterDetails({ ...registerDetails, parentInterest: e.target.value });
                 }}
               />
             </div>
           </div>
-
           
-          <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+          <div className="flex items-center justify-between">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Register
             </button>
           </div>
