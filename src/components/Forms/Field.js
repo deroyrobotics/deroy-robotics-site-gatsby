@@ -7,17 +7,23 @@ const Field = ({
   type,
   placeholder,
   required,
-  // autoComplete,
   value,
   onChange,
   name,
   options,
   description,
+  pattern,
+  errors,
 }) => {
   let wrapperClasses = 'form-control'
   let universalProps = {label, name, required, value, onChange, description}
-  let textProps = { ...placeholder}
-  let radioProps = { options}
+  let textProps = { ...placeholder, type, pattern }
+  let radioProps = { options }
+
+  if (errors[name]) {
+    universalProps.required = true
+  }
+
   return (
     <div className={wrapperClasses}>
       {type === 'radio' &&
