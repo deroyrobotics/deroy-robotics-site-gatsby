@@ -72,7 +72,7 @@ const Register = ({data}) => {
         </div> */}
         <form 
           className=" border-t pb-12 register-form w-full max-w-2xl mx-auto mt-10" 
-          action="/thanks" name="register" method="POST" 
+          action="/register/thanks" name="register" method="POST" 
           data-netlify="true" data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="register" />
