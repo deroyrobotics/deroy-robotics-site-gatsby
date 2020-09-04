@@ -85,6 +85,14 @@ collections:
         - {label: "Slug", name: "slug", widget: "hidden", default: "/contact" }
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Register"
+        name: "register"
+        file: "src/content/pages/register.md"
+        fields:
+        - {label: "Template", name: "template", widget: "hidden", default: "register-page" }
+        - {label: "Slug", name: "slug", widget: "hidden", default: "/register" }
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
   - name: settings
     label: Settings
     files:
