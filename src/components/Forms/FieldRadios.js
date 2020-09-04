@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RadioInput = ({ label, onChange, name, id, value}) => {
+const RadioInput = ({ label, onChange, name, id, checked, value}) => {
   let labelClass = 'px-2'
   let radioClass = ''
   return (
@@ -13,6 +13,7 @@ const RadioInput = ({ label, onChange, name, id, value}) => {
           type='radio'
           value={value}
           onChange={onChange}
+          checked={checked}
         />
         <span className={labelClass}>
           {label}
@@ -37,11 +38,10 @@ const FieldRadios = ({
 
   let radios = options.map((input, id) => {
     return (
-      <RadioInput {...input} name={name}  key={`radio_key_${id}`} />
+      <RadioInput {...input} name={name} checked={input.value === value} onChange={onChange} key={`radio_key_${id}`} />
     )
   })
   
-  console.log('description', description)
   return (
     <div className={inputClass}>
       {label &&

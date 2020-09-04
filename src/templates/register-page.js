@@ -63,15 +63,15 @@ const Register = ({data}) => {
           <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
 
-        <div className="rounded border p-4 text-xs">
+        {/* <div className="rounded border p-4 text-xs">
           <pre>
             <code>
             {JSON.stringify(registerDetails, null, 2)}
             </code>
           </pre>
-        </div>
+        </div> */}
         <form 
-          className=" border-t pt-6 pb-8 register-form w-full max-w-2xl mx-auto mt-8" 
+          className=" border-t pb-12 register-form w-full max-w-2xl mx-auto mt-10" 
           action="/thanks" name="register" method="POST" 
           data-netlify="true" data-netlify-honeypot="bot-field"
         >
@@ -180,7 +180,7 @@ const Register = ({data}) => {
           </div>
           
           <h3 className={sectionHeaderClasses}>Parent Information</h3>
-          <small className="block mb-8">Only 1 parent's information is required but feel free to fill out both</small>
+          <small className="block text-gray-600 text-xs italic mb-4">Only 1 parent's information is required but feel free to fill out both</small>
 
           {/* Father Name */}
           <div className={`${formWrapperClasses} mb-6`}>
@@ -278,8 +278,8 @@ const Register = ({data}) => {
                 name="parent_interested"
                 value={registerDetails.parentInterest}
                 options={[
-                  { label: 'Yes', value: 'Yes' },
-                  { label: 'No', value: 'No' },
+                  { label: 'Yes', value: 'yes' },
+                  { label: 'No', value: 'no' },
                 ]}
                 onChange={(e) => {
                   setRegisterDetails({ ...registerDetails, parentInterest: e.target.value });
