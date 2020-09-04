@@ -29,24 +29,23 @@ const Register = ({data}) => {
   const { frontmatter, html } = markdownRemark
 
   const [registerDetails, setRegisterDetails] = useState({
-    studentName: 'Student Name',
-    studentGender: 'male',
-    studentSchool: 'School',
-    studentGrade: 'Grade',
-    studentEmail: 'student@example.com',
-    track: 'engineering',
+    studentName: null,
+    studentGender: null,
+    studentSchool: null,
+    studentGrade: null,
+    studentEmail: null,
+    participating: "engineering",
 
-    parentNameFather: 'Father',
-    parentEmailFather: 'father@example.com',
-    parentPhoneFather: '1-800-dad',
-    
-    parentNameMother: 'Mother',
-    parentEmailMother: 'mother@example.com',
-    parentPhoneMother: '1-800-mom',
+    parentNameFather: null,
+    parentEmailFather: null,
+    parentPhoneFather: null,
 
-    parentInterest: 'no',
+    parentNameMother: null,
+    parentEmailMother: null,
+    parentPhoneMother: null,
 
-  });
+    parentInterest: "no",
+  })
 
   let formWrapperClasses = 'flex flex-wrap -mx-3 mb-1'
   let formWrapperInnerClasses = 'w-full px-3 mb-2 md:mb-0'
@@ -163,7 +162,7 @@ const Register = ({data}) => {
                 label="Participating In"
                 id="track_engineering_input"
                 type="radio"
-                name="participateing"
+                name="participating"
                 options={[
                   { label: 'Engineering', value: 'Engineering' }, 
                   { label: 'Programming', value: 'Programming' }, 
@@ -288,7 +287,7 @@ const Register = ({data}) => {
           </div>
           
           <div className="flex items-center justify-between pt-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Register
             </button>
           </div>
