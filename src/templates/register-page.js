@@ -110,8 +110,7 @@ const Register = ({data}) => {
                   {label: 'Female', value: 'female'},
                 ]}
                 value={registerDetails.studentGender}
-                description = "Why do we ask? The diversity of the students in the program affects what grants
-                we are elegiable to apply for."
+                description = "Why do we ask? The diversity of the students in the program affects what grants we are elegiable to apply for."
                 onChange={(e) => {
                   setRegisterDetails({...registerDetails, studentGender: e.target.value});
                 }}
