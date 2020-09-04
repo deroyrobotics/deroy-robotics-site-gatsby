@@ -3,6 +3,4 @@ template: register-page
 slug: /register
 title: Registration
 ---
-If you are looking to register for DeRoy Robotics, please visit our [registration page](/register).
-
-For all other questions, please contact us below:
+Please fill out the form below if you are interested in participating in the Robotics Club.
