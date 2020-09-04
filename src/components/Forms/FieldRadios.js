@@ -1,19 +1,22 @@
 import React from 'react'
 
-const RadioInput = ({ label, onChange, name, id, className, value}) => {
-
+const RadioInput = ({ label, onChange, name, id, value}) => {
+  let labelClass = 'px-2'
+  let radioClass = ''
   return (
     <> 
-      <label htmlFor={id}>
+      <label htmlFor={id} className="mr-4">
         <input
-          className={className}
+          className={radioClass}
           id={id}
           name={name}
           type='radio'
           value={value}
           onChange={onChange}
         />
-        {label}
+        <span className={labelClass}>
+          {label}
+        </span>
       </label>
     </>
   )
@@ -29,8 +32,8 @@ const FieldRadios = ({
   description,
   options = []
 }) => {
-  let inputClass = 'form-control md:flex md:items-center mb-6'
-  let labelClasses = 'form-label block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+  let inputClass = 'md:flex md:items-start mb-1'
+  let labelClasses = 'md:pt-2 form-label block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1'
 
   let radios = options.map((input, id) => {
     return (
@@ -38,6 +41,7 @@ const FieldRadios = ({
     )
   })
   
+  console.log('description', description)
   return (
     <div className={inputClass}>
       {label &&
@@ -47,6 +51,10 @@ const FieldRadios = ({
       }
       <div className="md:w-2/3">
         {radios}
+
+        {description &&
+          <p className="text-gray-600 text-xs italic mb-4">{description}</p>
+        }
       </div>
     </div>
   )

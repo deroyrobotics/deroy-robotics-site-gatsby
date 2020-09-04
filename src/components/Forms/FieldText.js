@@ -13,10 +13,9 @@ const FieldText = ({
   name,
   description,
 }) => {
-  let inputClass = 'form-control'
-  inputClass += ' md:flex md:items-center mb-6'
-  let labelClasses = 'form-label block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
-  let inputClasses = 'form-control  block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+  let inputClass = 'md:flex md:items-start mb-1'
+  let labelClasses = 'md:pt-2 form-label block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1'
+  let inputClasses = 'block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
 
   return (
     <div className={inputClass}>

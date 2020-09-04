@@ -48,6 +48,9 @@ const Register = ({data}) => {
 
   });
 
+  let formWrapperClasses = 'flex flex-wrap -mx-3 mb-1'
+  let formWrapperInnerClasses = 'w-full px-3 mb-2 md:mb-0'
+  let sectionHeaderClasses = 'font-semibold mt-8 mb-2'
   return  (
     <Layout className="register-page">
       <SEO 
@@ -74,10 +77,10 @@ const Register = ({data}) => {
         >
           <input type="hidden" name="form-name" value="register" />
 
-          <h3>Student Information</h3>
+          <h3 className={sectionHeaderClasses}>Student Information</h3>
           {/* Student Name */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
               <Field 
                 required
                 label="Student Name"
@@ -94,8 +97,8 @@ const Register = ({data}) => {
           </div>
 
           {/* Student Gender */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
               <Field 
                 required
                 label="Student Gender"
@@ -107,7 +110,7 @@ const Register = ({data}) => {
                   {label: 'Female', value: 'female'},
                 ]}
                 value={registerDetails.studentGender}
-                desription="Why do we ask? The diversity of the students in the program affects what grants
+                description = "Why do we ask? The diversity of the students in the program affects what grants
                 we are elegiable to apply for."
                 onChange={(e) => {
                   setRegisterDetails({...registerDetails, studentGender: e.target.value});
@@ -118,8 +121,8 @@ const Register = ({data}) => {
           </div>
           
           {/* Student Email */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
               <Field
                 required
                 label="Student Email"
@@ -136,8 +139,8 @@ const Register = ({data}) => {
           </div>
 
           {/* Student School */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
               <Field
                 required
                 label="Student School"
@@ -153,9 +156,9 @@ const Register = ({data}) => {
             </div>
           </div>
           
-          {/* Track */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          {/* Participating in */}
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
               <Field
                 required
                 label="Participating In"
@@ -176,12 +179,12 @@ const Register = ({data}) => {
             </div>
           </div>
           
-          <h3>Parent Information</h3>
-          <small>Only 1 parent's information is required but feel free to fill out both</small>
+          <h3 className={sectionHeaderClasses}>Parent Information</h3>
+          <small className="block mb-8">Only 1 parent's information is required but feel free to fill out both</small>
 
           {/* Father Name */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={`${formWrapperClasses} mb-6`}>
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Father's Name"
                 type="text"
@@ -193,7 +196,7 @@ const Register = ({data}) => {
               />
             </div>
 
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Father's Email"
                 type="text"
@@ -205,7 +208,7 @@ const Register = ({data}) => {
               />
             </div>
 
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Father's Phone"
                 type="tel"
@@ -221,7 +224,7 @@ const Register = ({data}) => {
         
           {/* Mothers Name */}
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Mother's Name"
                 type="text"
@@ -233,7 +236,7 @@ const Register = ({data}) => {
               />
             </div>
 
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Mother's Email"
                 type="text"
@@ -245,7 +248,7 @@ const Register = ({data}) => {
               />
             </div>
 
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+            <div className={formWrapperInnerClasses}>
               <Field
                 label="Mother's Phone"
                 type="tel"
@@ -258,12 +261,12 @@ const Register = ({data}) => {
             </div>
           </div>
 
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full aaamd:w-1/2 px-3 mb-6 md:mb-0">
+          <div className={formWrapperClasses}>
+            <div className={formWrapperInnerClasses}>
 
               <div>
-                Are you interested in helping?
-                <span className="description">
+                <span className="description pb-2 block">
+                  Are you interested in helping? 
                   Let us know if you might be interested in helping throughout the year or at the Expo?
                 </span>
               </div>
@@ -285,20 +288,13 @@ const Register = ({data}) => {
             </div>
           </div>
           
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pt-4">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Register
             </button>
           </div>
         </form>
 
-
-        
-
-
-
-
-      
       </div>
 
     </Layout>
