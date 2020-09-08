@@ -15,6 +15,18 @@ media_folder: "static/assets"
 public_folder: "/assets" 
 
 collections:
+  - name: 'alert'
+    label: 'Alerts'
+    label_singular: 'Alert'
+    description: >
+      Create an alert
+    folder: 'src/content/alerts'
+    summary: '{{title}} - Just a summary'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h2'}
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+      
   - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Posts' # Used in the UI
     label_singular: 'Post' # Used in the UI, ie: "New Post"
