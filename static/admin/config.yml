@@ -15,13 +15,14 @@ media_folder: "static/assets"
 public_folder: "/assets" 
 
 collections:
-  - name: 'alert'
+  - name: 'alerts'
     label: 'Alerts'
     label_singular: 'Alert'
     description: >
       Create an alert
     folder: 'src/content/alerts'
-    summary: '{{title}} - Just a summary'
+    slug: 'alert-{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: 'Alert: {{title}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h2'}
