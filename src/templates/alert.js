@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import {RiSendPlane2Line} from "react-icons/ri";
 
 export const alertQuery = graphql`
   query AlertQuery($id: String!){

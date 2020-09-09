@@ -1,6 +1,6 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import { RiArrowDownLine, RiArrowRightSLine } from "react-icons/ri"
+import { StaticQuery, graphql } from "gatsby"
+import { RiAlertFill } from "react-icons/ri"
 
 const AlertMaker = ({ data }) => (
   <div className="mt-4">
@@ -14,9 +14,11 @@ const Alert = ({data}) => {
   console.log('alert data', data)
   return (
     <div className="alert-item alert bg-yellow-300 text-orange-900 rounded p-4 mb-1 shadow">
-      <h3>{data.frontmatter.title}</h3>
-      <small>{data.frontmatter.date}</small>
-      <div>
+      <h3 className="text-2xl">
+        <RiAlertFill className="inline-block"/> {data.frontmatter.title}
+      </h3>
+      <small className="text-xs">{data.frontmatter.date}</small>
+      <div className="text-base">
         {data.excerpt}
       </div>
     </div>
