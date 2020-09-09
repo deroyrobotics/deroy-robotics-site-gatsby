@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
 import AlertList from "../components/alert-list"
 import SEO from "../components/seo"
+import VideoEmbed from '../components/VideoEmbed'
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!){
@@ -43,20 +44,24 @@ const HomePage = ({ data }) => {
 		<Layout>
       <SEO/>
       <AlertList />
-      <div className="home-banner grids col-1 sm-2">
-        <div>
-          <h1 className="title">{frontmatter.title}</h1>
+      <div className="home-banner flex flex-col md:flex-row content-start">
+
+        <div className="flex-1 mt-2 px-2 md:px-4">
+          <h1 className="title text-4xl font-bold pb-4">{frontmatter.title}</h1>
           <p className="tagline">{frontmatter.tagline}</p>
           <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
           <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span></Link>
         </div>
-        <div>
+
+        <div className="md:pl-6 pt-5 px-2 md:px-4">
+          <VideoEmbed height="400" src="FjQlhCHXyB4" />
           {Image ? (
             <Img 
               fluid={Image} 
               alt={frontmatter.title + ' - Featured image'}
               className="featured-image"
             />
+
           ) : ""}
         </div>
       </div>

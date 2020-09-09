@@ -28,9 +28,10 @@ const Layout = ({children, className}) => {
     <div className="primary-container">
       <Header>
         <Logo title={siteTitle} />
+        <div className="flex-1"></div>
         <Navigation/>
       </Header>
-      <main className={"container " + className}>
+      <main className={"max-w-screen-md m-auto container " + className}>
         {children}
       </main>
       <Footer/>
