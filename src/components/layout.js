@@ -31,7 +31,7 @@ const Layout = ({children, className}) => {
         <div className="flex-1"></div>
         <Navigation/>
       </Header>
-      <main className={"max-w-screen-md m-auto container " + className}>
+      <main className={"z-20 max-w-screen-md m-auto container " + className}>
         {children}
       </main>
       <Footer/>

@@ -39,30 +39,39 @@ export const pageQuery = graphql`
 const HomePage = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const featuredVideo =  frontmatter.featuredVideo // || "FjQlhCHXyB4"
   const Image = frontmatter.featuredImage ? frontmatter.featuredImage.childImageSharp.fluid : ""
 	return (
 		<Layout>
       <SEO/>
       <AlertList />
-      <div className="home-banner flex flex-col md:flex-row content-start">
+      <div className="home-content relative">
+        <div className="z-10 home-banner-bg"></div>
 
-        <div className="flex-1 mt-2 px-2 md:px-4">
-          <h1 className="title text-4xl font-bold pb-4">{frontmatter.title}</h1>
-          <p className="tagline">{frontmatter.tagline}</p>
-          <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
-          <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span></Link>
-        </div>
+        <div className="z-20 pt-12 home-banner flex flex-col md:flex-row content-start">
+          <div className="flex-1 mt-2 px-2 md:px-4">
+            <h1 className="title text-4xl font-bold pb-4">{frontmatter.title}</h1>
+            <p className="tagline">{frontmatter.tagline}</p>
+            <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
+            <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span></Link>
+          </div>
 
-        <div className="md:pl-6 pt-5 px-2 md:px-4">
-          <VideoEmbed height="400" src="FjQlhCHXyB4" />
-          {Image ? (
-            <Img 
-              fluid={Image} 
-              alt={frontmatter.title + ' - Featured image'}
-              className="featured-image"
-            />
+          <div className="md:pl-6 pt-5 px-2 md:px-4">
+            <pre>
+              {JSON.stringify(frontmatter, null, 2)}
+            </pre>
+            {featuredVideo ? (
+              <VideoEmbed height="400" src={featuredVideo} />
+            ) : ""}
+            {Image ? (
+              <Img 
+                fluid={Image} 
+                alt={frontmatter.title + ' - Featured image'}
+                className="featured-image"
+              />
 
-          ) : ""}
+            ) : ""}
+          </div>
         </div>
       </div>
       

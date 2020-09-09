@@ -3,7 +3,7 @@ template: index-page
 slug: /
 title: Welcome to DeRoy Robtics Club
 tagline: We are Getting READY for 2020 Robotics Expo
-featuredImage: /assets/deroy-robotics-profile.png
+featuredVideo: FjQlhCHXyB4
 cta:
   ctaText: Register Today
   ctaLink: /register

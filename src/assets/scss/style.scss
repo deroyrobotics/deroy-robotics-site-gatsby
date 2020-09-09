@@ -21,6 +21,36 @@
   // .desktop\:text-center { text-align: center }
 }
 
+
+@mixin header-bg {
+  background-color: #db140d;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+html {
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/graphcoders-lil-fiber.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+//   background-color: #ffffff;
+// background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
+// /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+
+
+// background-color: #ffffff;
+// background-image: url("https://www.transparenttextures.com/patterns/robots.png");
+// /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+}
+
+header.site-header {
+  @include header-bg;
+  // color: #fff;
+}
+
+
 .site-navigation {
   @media (max-width: 767px) {
     ul {
@@ -72,4 +102,38 @@
   .icon-menu-close {
     @include show;
   }
+}
+
+.home-banner {
+  position: relative;
+}
+
+.home-banner-bg {
+  display: none;
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  
+  .home-banner-bg {
+    display: block;
+    visibility: visible;
+    // background: url('../../../static/assets/banners/CompetitionBW1024.jpg');
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    position: absolute;
+    opacity: 0.6;
+    // top: -6rem;
+    left: calc(((100vw - 768px)/2) * -1);
+    width: 100vw;
+    height: 100%;
+
+    // background-color: rgb(250, 242, 216);
+    background-color: rgba(175, 175, 175, 0.404);
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  }
+}
+
+.site-header {
+  background: rgb(167, 26, 26);
+  color: #fff;
 }

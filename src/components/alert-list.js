@@ -55,6 +55,7 @@ export default function BlogListHome() {
             .map(edge =>
               <Alert key={edge.node.id} data={edge.node} />
           )
+          if (!posts.length) return ''
           return <AlertMaker data={posts} />
         } 
       }
