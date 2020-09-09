@@ -17,6 +17,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tagline
+        featuredVideo
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 480, maxHeight: 380, quality: 80, srcSetBreakpoints: [960, 1440]) {
@@ -48,7 +49,7 @@ const HomePage = ({ data }) => {
       <div className="home-content relative">
         <div className="z-10 home-banner-bg"></div>
 
-        <div className="z-20 pt-12 home-banner flex flex-col md:flex-row content-start">
+        <div className="z-20 pt-12 home-banner flex flex-col md:flex-row content-start pb-6">
           <div className="flex-1 mt-2 px-2 md:px-4">
             <h1 className="title text-4xl font-bold pb-4">{frontmatter.title}</h1>
             <p className="tagline">{frontmatter.tagline}</p>
@@ -57,9 +58,6 @@ const HomePage = ({ data }) => {
           </div>
 
           <div className="md:pl-6 pt-5 px-2 md:px-4">
-            <pre>
-              {JSON.stringify(frontmatter, null, 2)}
-            </pre>
             {featuredVideo ? (
               <VideoEmbed height="400" src={featuredVideo} />
             ) : ""}
