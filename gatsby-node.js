@@ -40,23 +40,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const id = post.node.id
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
+    const {slug, template} = post.node.frontmatter
 
-    createPage({
-      path: post.node.frontmatter.slug,
-      component: path.resolve(
-        `src/templates/${String(post.node.frontmatter.template)}.js`
-      ),
-      // additional data can be passed via context
-      context: {
-        id,
-        previous,
-        next,
-      },
-    })
+    if (slug && template) {
+      // Skip alerts
+      createPage({
+        path: post.node.frontmatter.slug,
+        component: path.resolve(
+          `src/templates/${String(post.node.frontmatter.template)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+          previous,
+          next,
+        },
+      })
 
-    // Count blog posts.
-    if (post.node.frontmatter.template === 'blog-post') {
-      blogPostsCount++
+      // Count blog posts.
+      if (post.node.frontmatter.template === 'blog-post') {
+        blogPostsCount++
+      }
     }
   })
 
