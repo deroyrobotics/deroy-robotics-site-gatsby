@@ -5,6 +5,7 @@ import { RiArrowRightSLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import BlogListHome from "../components/blog-list-home"
+import AlertList from "../components/alert-list"
 import SEO from "../components/seo"
 
 export const pageQuery = graphql`
@@ -41,6 +42,7 @@ const HomePage = ({ data }) => {
 	return (
 		<Layout>
       <SEO/>
+      <AlertList />
       <div className="home-banner grids col-1 sm-2">
         <div>
           <h1 className="title">{frontmatter.title}</h1>
@@ -58,6 +60,7 @@ const HomePage = ({ data }) => {
           ) : ""}
         </div>
       </div>
+      
       <BlogListHome/>
 		</Layout>
 	)
