@@ -84,7 +84,7 @@ const Register = ({data}) => {
       />
       <div className="wrapper">
         <div className="w-full max-w-2xl mx-auto">
-          <h1 className="text-3xl mb-6 mt-6">{frontmatter.title}</h1>
+          <h1 className="page-title">{frontmatter.title}</h1>
           <div
             className="description"
             dangerouslySetInnerHTML={{ __html: html }}

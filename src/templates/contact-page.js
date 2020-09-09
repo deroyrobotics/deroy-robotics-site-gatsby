@@ -34,7 +34,7 @@ const Contact = ({data}) => {
         description={frontmatter.title + " " + site.siteMetadata.title}
       />
       <div className="wrapper">
-        <h1>{frontmatter.title}</h1>
+        <h1 className="page-title">{frontmatter.title}</h1>
         <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
         <form className="contact-form" action="/contact/thanks" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />

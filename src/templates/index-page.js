@@ -47,14 +47,22 @@ const HomePage = ({ data }) => {
       <SEO/>
       <AlertList />
       <div className="home-content relative">
-        <div className="z-10 home-banner-bg"></div>
+        <div className="z-10 home-banner-bg bg-gradient-to-t from-gray-300 to-gray-500"></div>
 
         <div className="z-20 pt-12 home-banner flex flex-col md:flex-row content-start pb-6">
           <div className="flex-1 mt-2 px-2 md:px-4">
-            <h1 className="title text-4xl font-bold pb-4">{frontmatter.title}</h1>
+            <h1 className="title text-4xl md:text-5xl font-thin pb-4 md:text-gray-100">{frontmatter.title}</h1>
             <p className="tagline">{frontmatter.tagline}</p>
             <div className="description" dangerouslySetInnerHTML={{__html: html}}/>
-            <Link to={frontmatter.cta.ctaLink} className="button">{frontmatter.cta.ctaText}<span className="icon -right"><RiArrowRightSLine/></span></Link>
+            
+            <div className="cta-area">
+              <Link to={frontmatter.cta.ctaLink} className="mt-4 bg-red-700 button border shadow rounded inline-block p-2 px-4 text-gray-200">
+                <div className="flex ">
+                  {frontmatter.cta.ctaText}
+                  <span className="iconx -rightx text-2xl pl-2"><RiArrowRightSLine/></span>
+                </div>
+              </Link>
+            </div>
           </div>
 
           <div className="md:pl-6 pt-5 px-2 md:px-4">

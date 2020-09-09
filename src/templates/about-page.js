@@ -27,7 +27,7 @@ const AboutPage = ({ data }) => {
 				description={excerpt}
 			/>
 			<div className="wrapper">
-				<h1>{frontmatter.title}</h1>
+				<h1 className="page-title">{frontmatter.title}</h1>
 				<article dangerouslySetInnerHTML={{ __html: html }} />
 			</div>
 		</Layout>

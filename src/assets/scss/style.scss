@@ -52,6 +52,11 @@ header.site-header {
 
 
 .site-navigation {
+  a[aria-current="page"] {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.493);
+    border-bottom: 2px dotted rgba(255, 255, 255, 0.5);
+  }
+
   @media (max-width: 767px) {
     ul {
       margin-right: 1rem;
@@ -108,8 +113,30 @@ header.site-header {
   }
 }
 
+// Home page padding reset
+main.undefined.container {
+  padding-top: 0;
+}
+
+main > .wrapper > h1,
+h1.page-title {
+  line-height: 3.25rem;
+  padding-top: 0.5rem;
+  // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.493);
+  font-size: 2.25rem;
+  padding-bottom: 1rem;
+  font-weight: 200;
+  margin-top: 2rem;
+}
+
 .home-banner {
   position: relative;
+
+  h1 {
+    line-height: 3.25rem;
+    padding-top: 0.5rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.493);
+  }
 }
 
 .home-banner-bg {
@@ -121,19 +148,25 @@ header.site-header {
   .home-banner-bg {
     display: block;
     visibility: visible;
+
+
+
+
+
+
     // background: url('../../../static/assets/banners/CompetitionBW1024.jpg');
     // background-repeat: no-repeat;
     // background-size: 100% auto;
     position: absolute;
-    opacity: 0.6;
+    // opacity: 0.5;
     // top: -6rem;
     left: calc(((100vw - 768px)/2) * -1);
     width: 100vw;
     height: 100%;
 
     // background-color: rgb(250, 242, 216);
-    background-color: rgba(175, 175, 175, 0.404);
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    // background-color: rgba(175, 175, 175, 0.404);
+    // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   }
 }
 

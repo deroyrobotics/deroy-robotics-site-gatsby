@@ -27,7 +27,7 @@ const MenuItems = [
 const ListLink = (props) => {
 
   return (
-    <li className="px-2 py-1">
+    <li className="px-2 py-1 text-gray-800 md:text-white">
       <Link to={props.to}>{props.children}</Link>
     </li>
   )
