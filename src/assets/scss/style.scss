@@ -8,8 +8,52 @@
   display: inherit;
 }
 
-.site-navigation {
+
+@media (min-width: 640px) {
+  // .tablet\:text-center { text-align: center }
+}
+
+@media (max-width: 1024px) {
   
+}
+
+@media (min-width: 1280px) {
+  // .desktop\:text-center { text-align: center }
+}
+
+.site-navigation {
+  @media (max-width: 767px) {
+    ul {
+      margin-right: 1rem;
+      background: rgb(243, 243, 243);
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.281);
+      border-radius: 0.125rem;
+      margin-top: 0.25rem;
+
+      li {
+        padding: 0.25rem 1rem;
+        min-width: 8rem;
+      }
+    }
+  
+
+    &.is-active {
+      ul {
+        
+      }
+    }
+
+    &.menu-closed {
+      ul {
+        @include hide;
+      }
+    }
+  }
+}
+
+.icon-menu-line,
+.icon-menu-close {
+  font-size: 1.85rem;
 }
 
 .icon-menu-line {

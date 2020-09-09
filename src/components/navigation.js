@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
@@ -33,39 +33,31 @@ const ListLink = (props) => {
   )
 }
 
+const Navigation = (props) => {
+  const [showMenu, setShowMenu] = useState(false)
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {showMenu: false}
-
-    this.handleToggleClick = this.handleToggleClick.bind(this);
+  const handleToggleClick = () => {
+    setShowMenu(!showMenu)
   }
 
-  handleToggleClick() {
-    this.setState(state => ({      
-      showMenu: !state.showMenu    
-    }))
-  }
+  const listMenuItems = MenuItems.map((menuItem, index) => 
+    <ListLink key={index} to={menuItem.path}>{menuItem.title}</ListLink>
+  )
 
-  render () {
-    const listMenuItems = MenuItems.map((menuItem, index) => 
-      <ListLink key={index} to={menuItem.path}>{menuItem.title}</ListLink>
-    )
-    let navClass = 'site-navigation text-right ' 
-    navClass += this.state.showMenu ? 'menu-open' : 'menu-closed'
-    return (
-      <nav className={navClass}>
-        <button onClick={this.handleToggleClick} className={"md:invisible md:hidden menu-trigger" + (this.state.showMenu ? " is-active" : "")}>
-          <div className="icon-menu-line"><RiMenu3Line/></div>
-          <div className="icon-menu-close"><RiCloseLine/></div>
-        </button>
-        <ul className="flex flex-col md:flex-row md:relative absolute right-0">
-          {listMenuItems}
-        </ul>
-      </nav>
-    )
-  }
+  let navClass = 'site-navigation text-right ' 
+  navClass += showMenu ? 'menu-open' : 'menu-closed'
+
+  return (
+    <nav className={navClass}>
+      <button onClick={handleToggleClick} className={"md:invisible md:hidden menu-trigger" + (showMenu ? " is-active" : "")}>
+        <div className="icon-menu-line"><RiMenu3Line/></div>
+        <div className="icon-menu-close"><RiCloseLine/></div>
+      </button>
+      <ul className="flex flex-col md:flex-row md:relative absolute right-0">
+        {listMenuItems}
+      </ul>
+    </nav>
+  )
 }
 
 export default Navigation
