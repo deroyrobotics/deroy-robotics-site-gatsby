@@ -92,6 +92,9 @@ collections:
         - {label: "Slug", name: "slug", widget: "hidden", default: "/about" }
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
+        - {label: "Left Column", name: "leftcol", widget: "markdown"}
+        - {label: "Right Column", name: "rightcol", widget: "markdown"}
+        - {label: "Bottom", name: "bottom", widget: "markdown"}
       - label: "Contact"
         name: "contact"
         file: "src/content/pages/contact.md"
