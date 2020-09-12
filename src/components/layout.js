@@ -7,7 +7,7 @@ import Navigation from "./navigation";
 
 import "../assets/css/tailwind.css"
 import "../assets/scss/style.scss"
-import Footer from "./footer";
+import Footer from "./Footer";
 
 const query = graphql`
 query LayoutQuery {
