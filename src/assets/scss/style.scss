@@ -28,6 +28,12 @@ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fa
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+#___gatsby, 
+#gatsby-focus-wrapper,
+.primary-container {
+  min-height: 100vh;
+}
+
 html {
   background-color: #fff;
   background-image: url("https://www.transparenttextures.com/patterns/graphcoders-lil-fiber.png");

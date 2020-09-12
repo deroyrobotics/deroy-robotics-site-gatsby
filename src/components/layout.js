@@ -25,13 +25,13 @@ const Layout = ({children, className}) => {
   const { siteTitle } = site.siteMetadata
 
   return (
-    <div className="primary-container">
+    <div className="primary-container flex flex-col">
       <Header>
         <Logo title={siteTitle} />
         <div className="flex-1"></div>
         <Navigation/>
       </Header>
-      <main className={"z-20 px-4 pt-8 md:px-0 max-w-screen-md m-auto container " + className}>
+      <main className={"z-20 px-4 pt-8 md:px-0 max-w-screen-md m-auto container flex-1 " + className}>
         {children}
       </main>
       <Footer/>
