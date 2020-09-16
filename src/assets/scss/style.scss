@@ -24,8 +24,8 @@
 
 @mixin header-bg {
   background-color: #db140d;
-background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 #___gatsby, 
@@ -133,6 +133,12 @@ h1.page-title {
   padding-bottom: 1rem;
   font-weight: 200;
   margin-top: 2rem;
+}
+
+h2, h3 {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .home-banner {

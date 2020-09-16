@@ -11,7 +11,9 @@ export const pageQuery = graphql`
 			html
 			excerpt(pruneLength: 140)
       frontmatter {
-        title
+        title,
+				leftcol,
+				rightcol
       }
     }
   }
@@ -28,7 +30,12 @@ const AboutPage = ({ data }) => {
 			/>
 			<div className="wrapper">
 				<h1 className="page-title">{frontmatter.title}</h1>
-				<article dangerouslySetInnerHTML={{ __html: html }} />
+				<article className="pb-4 mb-4" dangerouslySetInnerHTML={{ __html: html }} />
+				<div className="flex flex-col md:flex-row">
+					<div className="pb-4 flex-1 md:pr-4" dangerouslySetInnerHTML={{ __html: frontmatter.leftcol }} />
+					<div className="pb-4 flex-1 md:pl-4" dangerouslySetInnerHTML={{ __html: frontmatter.rightcol }} />
+
+				</div>
 			</div>
 		</Layout>
 	)

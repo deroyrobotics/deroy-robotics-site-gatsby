@@ -1,10 +1,11 @@
 const path = require("path")
+var remark = require('remark')
+var html = require('remark-html')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  //const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const blogList = path.resolve(`./src/templates/blog-list.js`)
 
   const result = await graphql(`
@@ -19,6 +20,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               slug
               template
               title
+              leftcol
+              rightcol
             }
           }
         }
@@ -87,6 +90,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
+    if (node.frontmatter.leftcol) {
+      remark()
+        .use(html)
+        .process(node.frontmatter.leftcol, function (err, file) {
+          node.frontmatter.leftcol = String(file)
+        })
+      
+    }
+    if (node.frontmatter.rightcol) {
+      remark()
+        .use(html)
+        .process(node.frontmatter.rightcol, function (err, file) {
+          node.frontmatter.rightcol = String(file)
+        })
+    }
     createNodeField({
       node,
       name: `slug`,
